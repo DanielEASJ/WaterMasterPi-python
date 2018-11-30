@@ -8,6 +8,7 @@ from sense_hat import SenseHat
 
 BROADCAST_TO_PORT = 6666
 
+minutes = 10
 
 sense = SenseHat()
 sense.clear()
@@ -37,5 +38,5 @@ while True:
 
     data = json.dumps(jsonObj)
     s.sendto(bytes(data, "UTF-8"), ('<broadcast>', BROADCAST_TO_PORT))
-    time.sleep(20)
+    time.sleep(60 * minutes)
     print(data)
