@@ -36,7 +36,7 @@ if sensorRecPort == 0:
     s1.bind(('', globalRecPort))
     s1.setsockopt(SOL_SOCKET, SO_BROADCAST, 1)
     s1.sendto(bytes(str(get_mac()), "UTF-8"), ('<broadcast>', BROADCAST_TO_PORT))
-    time.sleep(5)
+    time.sleep(2)
     jsonObj1 = str(s1.recvfrom(1024))
     splitObj = jsonObj1.split("'")
     portObj = json.loads(splitObj[1])
